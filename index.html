@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <title>Case Study</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <center>
+
+        <h>CASE STUDY BETWEEN GOOGLE LENS AND MOBILENET</h>
+    <br>
+    <img class="img" src="https://play-lh.googleusercontent.com/G5oF0mhpOcQzFTrU6TDUL0JoAjzRt38weiZKua7L61WVT1z3dPcE9gUu-W2EwtM9cZU">
+<br>
+<h>V/S</h>
+<br>
+<img class="img" src="data:image/png;base64,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">
+
+    <ol>
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="box.jpg" class="img-responsive">  
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1>
+
+    <br> 
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="comb.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1>
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="cream.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="drawing_book.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="hair_tie.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="heart.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="matchsticks.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="paint.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="remote.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+
+    <br>
+
+    <div1 class="container test_image_result col-xs-12">
+
+        <li class="col-sm-4 col-xs-12">
+            <p>Test Image- </p>
+            <img src="ring.jpg" class="img-responsive">
+        </li>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>GOOGLE LENS</p>- 
+            <span> </span>
+        </h4>
+
+        <h4 class="col-sm-4 col-xs-12">
+            Output on <p>Mobilenet Model</p>- 
+            <span> </span>
+        </h4>
+
+        <div class="mini_result" class="col-xs-12">
+            <h3>Result - </h3>
+            <hr>
+            <h3> </h3>
+        </div>
+    </div1> 
+</ol>
+
+    <div class="copy_right_footer">
+        Developed by - Vaishnawi
+        </div>
+</center>
+    <script src="main.js"></script>
+</body>
+</html>
