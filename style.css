@@ -35,3 +35,10 @@
       background-color: rgb(169, 198, 236);
       box-shadow: 10px 10px 50px rgb(43, 0, 235);
   }
+
+  .container1{
+      color: white;
+    align-content: center;
+    background-color: rgb(241, 81, 108);
+    box-shadow: 10px 10px 50px rgb(235, 0, 0);
+  }
